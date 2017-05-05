@@ -11,13 +11,15 @@ public class MultiplyHandler implements Handler{
         this.list = list;
     }
 
-    public Double run () {
-        if(Objects.equals((String) list.get(1), "*")) {
-            int leftInt = (int)list.get(0);
-            int rightInt = (int)list.get(2);
-            return new Double(leftInt * rightInt);
-        }
+    public List<Object> run () {
+//        if(Objects.equals((String) list.get(1), "*")) {
+//            int leftInt = (int)list.get(0);
+//            int rightInt = (int)list.get(2);
+//            return new Double(leftInt * rightInt);
+//        }
+//
+//        return null;
 
-        return null;
+        return list;
     }
 }

@@ -16,13 +16,13 @@ public class Parser {
         List<Object> list = new ArrayList<>();
 
         String temp = "";
-        Integer number = null;
+        Double number = null;
         String operator = "";
         for(char c : input.toCharArray()) {
             temp = temp.concat(Character.toString(c));
 
             try {
-                number = Integer.parseInt(temp);
+                number = Double.parseDouble(temp);
             }
             catch(NumberFormatException nfe) {
                 //end of number

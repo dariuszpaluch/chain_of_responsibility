@@ -8,13 +8,24 @@ public class DivisionHandler implements Handler {
         this.list = list;
     }
 
-    public Double run () {
-        if(Objects.equals((String) list.get(1), "/")) {
-            int leftInt = (int)list.get(0);
-            int rightInt = (int)list.get(2);
-            return new Double(leftInt / rightInt);
-        }
+    public void action() {
+        int i = 1;
+        while(i < list.size() && i >= 0)
+            if(Objects.equals((String) list.get(i), "-")) {
+                double leftInt = (double)list.get(i-1);
+                double rightInt = (double)list.get(i+1);
 
-        return null;
+                list.set(i-1, leftInt - rightInt);
+                list.remove(i);
+                list.remove(i);
+
+            } else {
+                i +=2;
+            }
+    }
+
+    public List<Object> run () {
+        this.action();
+        return list;
     }
 }
